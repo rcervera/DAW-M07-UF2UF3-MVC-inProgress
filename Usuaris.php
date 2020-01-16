@@ -6,15 +6,15 @@ class Usuaris {
 
     function __construct() {
      
-	try {
-	    
-	    $this->bd = new PDO('mysql:host=localhost;dbname=projectBoard', 
-                 $this->usuari, $this->password);  	   
+		try {
+			
+			$this->bd = new PDO('mysql:host=localhost;dbname=projectBoard', 
+					 $this->usuari, $this->password);  	   
 
-	} catch (PDOException $e) {
-	    print "Error: " . $e->getMessage() . "<br/>";
-	    die();
-	}
+		} catch (PDOException $e) {
+			print "Error: " . $e->getMessage() . "<br/>";
+			die();
+		}
 
     }
 
@@ -38,29 +38,48 @@ class Usuaris {
    }
 
     public function esborrar($codi) {
-	 $sql ="delete from usuaris where codi=:codi";
-         $ordre = $this->bd->prepare($sql);	 
-         $ordre->bindValue(':codi',$codi);		   
-	 $res = $ordre->execute();
-         return $res;
+		$sql ="delete from usuaris where codi=:codi";
+		$ordre = $this->bd->prepare($sql);	 
+		 $ordre->bindValue(':codi',$codi);		   
+		$res = $ordre->execute();
+        return $res;
     }
 
     public function afegir($nom,$cognoms,$email,$username,$password) {
- 	$sql ="insert into usuaris(nom,cognoms,email,username,password) values 
-			 (:nom,:cognoms,:email,:username,:password)";
-	$ordre = $this->bd->prepare($sql);	 
-	$ordre->bindValue(':nom',$nom);
-	$ordre->bindValue(':cognoms',$cognoms);
-	$ordre->bindValue(':email',$email);
-	$ordre->bindValue(':username',$username);
-	$ordre->bindValue(':password',md5($password));
-	$res = $ordre->execute(); 
+		$sql ="insert into usuaris(nom,cognoms,email,username,password) values 
+				 (:nom,:cognoms,:email,:username,:password)";
+		$ordre = $this->bd->prepare($sql);	 
+		$ordre->bindValue(':nom',$nom);
+		$ordre->bindValue(':cognoms',$cognoms);
+		$ordre->bindValue(':email',$email);
+		$ordre->bindValue(':username',$username);
+		$ordre->bindValue(':password',md5($password));
+		$res = $ordre->execute(); 
+        return $res;
+
+    }
+
+
+    public function actualitzar($codi,$nom,$cognoms,$email,$username) {
+		$sql ="update usuaris set nom=:nom,cognoms=:cognoms, email=:email, username=:username 
+				 where codi=:codi";
+		$ordre = $this->bd->prepare($sql);	 
+			$ordre->bindValue(':codi',$codi);
+		$ordre->bindValue(':nom',$nom);
+		$ordre->bindValue(':cognoms',$cognoms);
+		$ordre->bindValue(':email',$email);
+		$ordre->bindValue(':username',$username);
+		
+		$res = $ordre->execute(); 
         return $res;
 
     }
 
 
 
+
+
 }
 
 ?>
+

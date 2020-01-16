@@ -1,3 +1,5 @@
+
+:i
 # DAW-M07-UF2UF3-MVC-inProgress
 
 Aplicaci√≥ per gestionar usuaris, projectes, equips, tasques...
@@ -12,3 +14,6 @@ Tamb√© separem el codi que cont√© html en fitxers separats.
 Aix√≥ aconseguim estructurar una mica m√©s l'aplicaci√≥. La classe Usuaris formar√† part del model de l'aplicaci√≥.
 Els fitxers llistat.php i formnew.php que contenen el codi en html ser√† part de la vista.
 Esperem poder separar la nostra aplicaci√≥ en 3 capes: M-V-C Model vista Controlador.
+
+3)Hem estructurat el codi del controlador index.php en diferents mËtodes. Hem posat un switch que crida cada un d'aquest mËtodes segons un par‡metre GET anomenat operaciÛ.
+Hem afegit la vista formupdate per a poder actualitzar la informaciÛ d'un usuari. Hem afegit 2 mËtodes al controlador, un per mostrar el formulari i l'altre per desar la informaciÛ enviada a travÈs d'aquest formulari. 
