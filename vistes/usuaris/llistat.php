@@ -1,5 +1,5 @@
 <?php
-        echo "<a href='index.php?operacio=formnou'>Nou</a>";
+        echo "<a href='usuaris.php?operacio=formnou'>Nou</a>";
 	echo "<table border=1>";
     	foreach($res as $usuari) {
 		echo "<tr>"; 
@@ -10,9 +10,9 @@
 		echo "<td>".$usuari['email']."</td>";
 		echo "<td>".$usuari['rol']."</td>";
 		echo "<td>".$usuari['password']."</td>";
-		echo "<td><a href='index.php?operacio=esborrar&codi=".$usuari['codi']."'>
+		echo "<td><a href='usuaris.php?operacio=esborrar&codi=".$usuari['codi']."'>
                      Esborrar</td>";
-		echo "<td><a href='index.php?operacio=actualitzar&codi=".$usuari['codi']."'>
+		echo "<td><a href='usuaris.php?operacio=actualitzar&codi=".$usuari['codi']."'>
                      Actualitzar</td>";
 		echo "</tr>";
         }
