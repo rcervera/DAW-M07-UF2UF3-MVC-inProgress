@@ -1,5 +1,5 @@
 <?php
-        echo "<a href='projectes.php?operacio=formnou'>Nou</a>";
+        echo "<a href='index.php?control=projectes&operacio=formnou'>Nou</a>";
 	echo "<table border=1>";
     	foreach($res as $projecte) {
 		echo "<tr>"; 
@@ -10,9 +10,9 @@
 		echo "<td>".$projecte['dataFi']."</td>";
 		echo "<td>".$projecte['estat']."</td>";
 		
-		echo "<td><a href='projectes.php?operacio=esborrar&codi=".$projecte['codi']."'>
+		echo "<td><a href='index.php?control=projectes&operacio=esborrar&codi=".$projecte['codi']."'>
                      Esborrar</td>";
-		echo "<td><a href='projectes.php?operacio=actualitzar&codi=".$projecte['codi']."'>
+		echo "<td><a href='index.php?control=projectes&operacio=actualitzar&codi=".$projecte['codi']."'>
                      Actualitzar</td>";
 		echo "</tr>";
         }

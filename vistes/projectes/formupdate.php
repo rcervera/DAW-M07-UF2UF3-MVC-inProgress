@@ -1,6 +1,6 @@
 <h3>Actualitzar Projecte</h3>
 
-<form method="POST" action="projectes.php?operacio=update&codi=<?php echo $projecte['codi']; ?>">
+<form method="POST" action="index.php?control=projectes&operacio=update&codi=<?php echo $projecte['codi']; ?>">
   Nom <input type="text" name="nom" value="<?php echo $projecte['nom']; ?>"><br>
   Descripcio <input type="text" name="descripcio" value="<?php echo $projecte['descripcio']; ?>" ><br>
   Data Inici <input type="date" name="dataInici" value="<?php echo $projecte['dataInici']; ?>"><br>

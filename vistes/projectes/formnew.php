@@ -1,5 +1,5 @@
 <h3>Nou Projecte</h3>
-<form method="POST" action="projectes.php?operacio=alta">
+<form method="POST" action="index.php?control=projectes&operacio=alta">
   Nom <input type="text" name="nom"><br>
   Descripcio <input type="text" name="descripcio"><br>
   Data Inici <input type="date" name="dataInici"><br>

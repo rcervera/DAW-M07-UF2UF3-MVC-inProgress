@@ -1,5 +1,5 @@
 <h3>Nou usuari</h3>
-<form method="POST" action="usuaris.php?operacio=alta">
+<form method="POST" action="index.php?control=usuaris&operacio=alta">
   Nom <input type="text" name="nom"><br>
   Cognoms <input type="text" name="cognoms"><br>
   Email <input type="text" name="email"><br>

@@ -1,5 +1,5 @@
 <?php
-	include_once '../models/Projectes.php';
+	include_once 'models/Projectes.php';
 	error_reporting(E_ALL);
  	ini_set('display_errors', 1);
 
@@ -35,10 +35,10 @@
         }
 
         $res = $projectes->getAll();
-        include_once '../vistes/projectes/llistat.php';   
+        include_once 'vistes/projectes/llistat.php';   
 
         function mostrarFormulariNou() {
-            include_once '../vistes/projectes/formnew.php';
+            include_once 'vistes/projectes/formnew.php';
             exit;
         }
 
@@ -49,7 +49,7 @@
 		   $codi=$_GET['codi'];	
 		   $projecte = $projectes->get($codi);
 		   if($projecte) {			
-			include_once '../vistes/projectes/formupdate.php';
+			include_once 'vistes/projectes/formupdate.php';
             		exit;
 
 		   }

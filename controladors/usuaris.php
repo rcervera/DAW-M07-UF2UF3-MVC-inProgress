@@ -1,5 +1,5 @@
 <?php
-	include_once '../models/Usuaris.php';
+	include_once 'models/Usuaris.php';
 	error_reporting(E_ALL);
  	ini_set('display_errors', 1);
 
@@ -35,10 +35,10 @@
         }
 
         $res = $usuaris->getAll();
-        include_once '../vistes/usuaris/llistat.php';   
+        include_once 'vistes/usuaris/llistat.php';   
 
         function mostrarFormulariNou() {
-            include_once '../vistes/usuaris/formnew.php';
+            include_once 'vistes/usuaris/formnew.php';
             exit;
         }
 
@@ -49,7 +49,7 @@
 		   $codi=$_GET['codi'];	
 		   $usuari = $usuaris->get($codi);
 		   if($usuari) {			
-			include_once '../vistes/usuaris/formupdate.php';
+			include_once 'vistes/usuaris/formupdate.php';
             		exit;
 
 		   }
