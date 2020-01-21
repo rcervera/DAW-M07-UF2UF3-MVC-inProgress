@@ -1,5 +1,5 @@
 <h3>Actualitzar usuari</h3>
-<form method="POST" action="index.php?control=usuaris&operacio=update&codi=<?php echo $usuari['codi']; ?>">
+<form method="POST" action="index.php?control=controlusuaris&operacio=update&codi=<?php echo $usuari['codi']; ?>">
  
   Nom <input type="text" name="nom" value="<?php echo $usuari['nom']; ?>"><br>
   Cognoms <input type="text" name="cognoms" value="<?php echo $usuari['cognoms']; ?>"><br>

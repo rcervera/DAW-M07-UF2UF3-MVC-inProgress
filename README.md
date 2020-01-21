@@ -25,3 +25,8 @@ El fitxer index.php de la carpeta principal passa a tenir únicament dos enllaços
 
 5) Fem que index.php passi a ser el controlador principal de l'aplicació. Afegirem el paràmetre control per especificar el controlador que volem carregar en cada moment. Les url de la nostra aplicació tindran la forma index.php?control=nomcontrol&accio=nomaccio&parametres=.....
 Creem un controlador anomenat default per si no ens passen cap controlador en la url. El carregarem per defecte en aquest cas.
+
+6) Els controladors passen a ser classes. En el constructor carreguem els models. Un mètode index serà el mètode que es carragarà per defecte.
+Hem de canviar el controlador index.php per a que carregui els nous tipus de controladors.
+Afegim header i footers a les vistes.
+
