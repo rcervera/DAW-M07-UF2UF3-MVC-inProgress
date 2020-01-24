@@ -30,3 +30,7 @@ Creem un controlador anomenat default per si no ens passen cap controlador en la
 Hem de canviar el controlador index.php per a que carregui els nous tipus de controladors.
 Afegim header i footers a les vistes.
 
+7) Afegim autentificació d'usuaris. Vistes de login, nou mètode al model Usuaris per validar username i password i nou control controlLogin.
+
+
+
