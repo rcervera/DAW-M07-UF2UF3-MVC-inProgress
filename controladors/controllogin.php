@@ -25,6 +25,9 @@ class controllogin {
                 echo $user." ".md5($pwd);
                 if ($this->usuaris->valida($user, $pwd)) {
                     $_SESSION['username'] = $user;
+                    $rol = $this->usuaris->getRol($user);
+                    // Desar el rol en la sessiÃ³
+                    $_SESSION['rol']=$rol;                                     
                     header('Location: index.php');
                     exit;
                 } else {

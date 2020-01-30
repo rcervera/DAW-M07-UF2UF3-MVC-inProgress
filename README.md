@@ -32,5 +32,6 @@ Afegim header i footers a les vistes.
 
 7) Afegim autentificació d'usuaris. Vistes de login, nou mètode al model Usuaris per validar username i password i nou control controlLogin.
 
+8) Afegim accés a l'aplicació segons el camp rol (normal, administrador) dels usuaris autentificats. Afegim vistes per als 2 tipus d'usuari i en els constructors dels controladors afegim la comprovació de l'usuari per a que pugui accedir o no als diferents mètodes
 
 

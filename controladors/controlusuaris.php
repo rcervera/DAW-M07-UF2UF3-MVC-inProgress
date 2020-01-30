@@ -11,6 +11,11 @@ class controlusuaris {
             header('Location: index.php?control=controllogin');
             exit;
         } 
+        
+        if (!isset($_SESSION['rol']) || $_SESSION['rol'] !=1 ) {
+            header('Location: index.php');
+            exit;
+        } 
 
         include_once 'models/Usuaris.php';
         $this->usuaris = new Usuaris();
@@ -60,7 +65,8 @@ class controlusuaris {
             $email = $_POST['email'];
             $username = $_POST['username'];
             $password = $_POST['password'];
-            $res = $this->usuaris->afegir($nom, $cognoms, $email, $username, $password);
+            $rol = $_POST['rol'];
+            $res = $this->usuaris->afegir($nom, $cognoms, $email, $username, $password,$rol);
             if ($res)
                 $this->missatge = "alta correcta";
             else
@@ -100,7 +106,8 @@ class controlusuaris {
                 $cognoms = $_POST['cognoms'];
                 $email = $_POST['email'];
                 $username = $_POST['username'];
-                $res = $this->usuaris->actualitzar($codi, $nom, $cognoms, $email, $username);
+                $rol = $_POST['rol'];
+                $res = $this->usuaris->actualitzar($codi, $nom, $cognoms, $email, $username,$rol);
                 if ($res)
                     $this->missatge = "Actualització correcta";
                 else

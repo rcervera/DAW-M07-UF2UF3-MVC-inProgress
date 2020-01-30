@@ -6,6 +6,16 @@ class controlprojectes {
     private $missatge;
 
     function __construct() {
+        if (!isset($_SESSION['username'])) {
+            header('Location: index.php?control=controllogin');
+            exit;
+        } 
+        
+        if (!isset($_SESSION['rol']) || $_SESSION['rol'] !=1 ) {
+            header('Location: index.php');
+            exit;
+        } 
+        
         include_once 'models/Projectes.php';
         $this->projectes = new Projectes();
         $this->missatge = "";
