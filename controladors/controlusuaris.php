@@ -1,4 +1,6 @@
 <?php
+include_once 'helpers/funcions.php';
+include_once 'helpers/Validation.php';
 
 class controlusuaris {
 
@@ -67,17 +69,47 @@ class controlusuaris {
     }
 
     public function store() {
-        global $missatge;
+       
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            // falta validar dades
+            // validar dades
+//            $nom = $_POST['nom'];
+//            $cognoms = $_POST['cognoms'];
+//            $email = $_POST['email'];
+//            $username = $_POST['username'];
+//            $password = $_POST['password'];
+//            $rol = $_POST['rol'];
+            $validator = new Validation();                
+                    
+            $username = obtenir_camp('username');                    
+            $validator->name('username')->value($username)->max(20)->required()->notExists("usuaris","username");
+            
+            $nom = obtenir_camp('nom');                    
+            $validator->name('nom')->value($nom)->max(25)->required();
 
-            $nom = $_POST['nom'];
-            $cognoms = $_POST['cognoms'];
-            $email = $_POST['email'];
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $rol = $_POST['rol'];
+            $cognoms = obtenir_camp('cognoms');                    
+            $validator->name('cognoms')->value($cognoms)->max(75)->required();
+
+            $password = obtenir_camp('password');                    
+            $validator->name('password')->value($password)->min(6)->max(15)->required();
+
+            $email = obtenir_camp('email');                    
+            $validator->name('email')->value($email)->isEmail()->required();
+
+            $opcions=array(0,1);
+            $rol = obtenir_camp('rol');                    
+            $validator->name('rol')->value($rol)->isOption($opcions)->required();
+                           
+                    
+            if(!$validator->isSuccess()) { 
+                $_SESSION['errors'] = $validator->getErrors();
+                $_SESSION['dades'] = $validator->getValues();
+                header('Location: index.php?control=controlusuaris&operacio=showformnew');
+                exit;
+            }
+            
+            
+            
             $res = $this->usuaris->afegir($nom, $cognoms, $email, $username, $password,$rol);
             if ($res)
                 $this->missatge = "alta correcta";

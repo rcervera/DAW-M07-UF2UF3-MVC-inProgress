@@ -35,3 +35,5 @@ Afegim header i footers a les vistes.
 8) Afegim acc�s a l'aplicaci� segons el camp rol (normal, administrador) dels usuaris autentificats. Afegim vistes per als 2 tipus d'usuari i en els constructors dels controladors afegim la comprovaci� de l'usuari per a que pugui accedir o no als diferents m�todes
 
 9) Afegim pagínació en els usuaris: hem canviat class Model, mètode index en controlusuaris i afegim vista per als enllaços
+
+10) Afegim validació de dades formulari Alta Usuaris. Afegim una carpeta Helpers: conté classe Validador i fitxers de funcions auxiliars.
