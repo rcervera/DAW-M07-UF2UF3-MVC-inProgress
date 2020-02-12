@@ -23,11 +23,23 @@ class controlusuaris {
     }
 
     public function index() {
-        $res = $this->usuaris->getAll();
+        // $res = $this->usuaris->getAll();
+        if(isset($_GET['pagina'])) $numPagina=$_GET['pagina'];
+        else $numPagina=1;
+ 
+        $numRegsPag=4;
+
+        
+        $res = $this->usuaris->getPagina($numPagina,$numRegsPag);
+  
+        $total_pags = $this->usuaris->numeroPagines($numRegsPag);
+
+        
         $missatge = $this->missatge;
 
         include_once 'vistes/templates/header.php';
         include_once 'vistes/usuaris/llistat.php';
+        include_once 'vistes/usuaris/links.php';
         include_once 'vistes/templates/footer.php';
     }
 
