@@ -2,36 +2,36 @@
 
 # DAW-M07-UF2UF3-MVC-inProgress
 
-Aplicació per gestionar usuaris, projectes, equips, tasques...
+Aplicaciï¿½ per gestionar usuaris, projectes, equips, tasques...
 
-1 ) En una primera versió aprenem a connectar-nos a la BD
-,a recuperar informació, afegir-ne de nova i a eleminar registres
-Tot en una única pàgina.
+1 ) En una primera versiï¿½ aprenem a connectar-nos a la BD
+,a recuperar informaciï¿½, afegir-ne de nova i a eleminar registres
+Tot en una ï¿½nica pï¿½gina.
 
-2) En la segona versió creem una classe anomenada Usuaris que contindrà
-tot el codi d'accés a la BD, estructurada en mètodes per : afegir, esborrar, recuperar 1 registre, recuper-los tots,...
-També separem el codi que conté html en fitxers separats.
-Aixó aconseguim estructurar una mica més l'aplicació. La classe Usuaris formarà part del model de l'aplicació.
-Els fitxers llistat.php i formnew.php que contenen el codi en html serà part de la vista.
-Esperem poder separar la nostra aplicació en 3 capes: M-V-C Model vista Controlador.
+2) En la segona versiï¿½ creem una classe anomenada Usuaris que contindrï¿½
+tot el codi d'accï¿½s a la BD, estructurada en mï¿½todes per : afegir, esborrar, recuperar 1 registre, recuper-los tots,...
+Tambï¿½ separem el codi que contï¿½ html en fitxers separats.
+Aixï¿½ aconseguim estructurar una mica mï¿½s l'aplicaciï¿½. La classe Usuaris formarï¿½ part del model de l'aplicaciï¿½.
+Els fitxers llistat.php i formnew.php que contenen el codi en html serï¿½ part de la vista.
+Esperem poder separar la nostra aplicaciï¿½ en 3 capes: M-V-C Model vista Controlador.
 
 3)Hem estructurat el codi del controlador index.php en diferents m todes. Hem posat un switch que crida cada un d'aquest m todes segons un par metre GET anomenat operaci .
 Hem afegit la vista formupdate per a poder actualitzar la informaci  d'un usuari. Hem afegit 2 m todes al controlador, un per mostrar el formulari i l'altre per desar la informaci  enviada a trav s d'aquest formulari. 
 
-4) Creem la taula de projectes. Creem el model Projectes. Com els constructor, get, getAll, delete són mètodes molt semblants creem la classe Model i implementem aquests mètodes allà. Usuaris i Projectes hereten de la classe Model (afegim atribut $taula per a que els mètodes es puguin reutilitzar correctament).
-Creem les vistes per a la gestió de la nova taula i també el controlador projectes.php, que tindrà un codi molt semblant al controlador que ja teníem, index.php. index.php però passa a anomenar-se usuaris.php i col·loquem el codi font dins de la carpeta controladors).
-El fitxer index.php de la carpeta principal passa a tenir únicament dos enllaços per a cridar a cada controlador respectivament.
+4) Creem la taula de projectes. Creem el model Projectes. Com els constructor, get, getAll, delete sï¿½n mï¿½todes molt semblants creem la classe Model i implementem aquests mï¿½todes allï¿½. Usuaris i Projectes hereten de la classe Model (afegim atribut $taula per a que els mï¿½todes es puguin reutilitzar correctament).
+Creem les vistes per a la gestiï¿½ de la nova taula i tambï¿½ el controlador projectes.php, que tindrï¿½ un codi molt semblant al controlador que ja tenï¿½em, index.php. index.php perï¿½ passa a anomenar-se usuaris.php i colï¿½loquem el codi font dins de la carpeta controladors).
+El fitxer index.php de la carpeta principal passa a tenir ï¿½nicament dos enllaï¿½os per a cridar a cada controlador respectivament.
 
 
-5) Fem que index.php passi a ser el controlador principal de l'aplicació. Afegirem el paràmetre control per especificar el controlador que volem carregar en cada moment. Les url de la nostra aplicació tindran la forma index.php?control=nomcontrol&accio=nomaccio&parametres=.....
+5) Fem que index.php passi a ser el controlador principal de l'aplicaciï¿½. Afegirem el parï¿½metre control per especificar el controlador que volem carregar en cada moment. Les url de la nostra aplicaciï¿½ tindran la forma index.php?control=nomcontrol&accio=nomaccio&parametres=.....
 Creem un controlador anomenat default per si no ens passen cap controlador en la url. El carregarem per defecte en aquest cas.
 
-6) Els controladors passen a ser classes. En el constructor carreguem els models. Un mètode index serà el mètode que es carragarà per defecte.
+6) Els controladors passen a ser classes. En el constructor carreguem els models. Un mï¿½tode index serï¿½ el mï¿½tode que es carragarï¿½ per defecte.
 Hem de canviar el controlador index.php per a que carregui els nous tipus de controladors.
 Afegim header i footers a les vistes.
 
-7) Afegim autentificació d'usuaris. Vistes de login, nou mètode al model Usuaris per validar username i password i nou control controlLogin.
+7) Afegim autentificaciï¿½ d'usuaris. Vistes de login, nou mï¿½tode al model Usuaris per validar username i password i nou control controlLogin.
 
-8) Afegim accés a l'aplicació segons el camp rol (normal, administrador) dels usuaris autentificats. Afegim vistes per als 2 tipus d'usuari i en els constructors dels controladors afegim la comprovació de l'usuari per a que pugui accedir o no als diferents mètodes
+8) Afegim accï¿½s a l'aplicaciï¿½ segons el camp rol (normal, administrador) dels usuaris autentificats. Afegim vistes per als 2 tipus d'usuari i en els constructors dels controladors afegim la comprovaciï¿½ de l'usuari per a que pugui accedir o no als diferents mï¿½todes
 
-
+9) Afegim pagÃ­naciÃ³ en els usuaris: hem canviat class Model, mÃ¨tode index en controlusuaris i afegim vista per als enllaÃ§os
